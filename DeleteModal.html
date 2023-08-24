@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+.open-delete button{
+    padding: 10px;
+    background: rgb(0, 132, 114);
+    border: none;
+    color: aliceblue;
+}
+    </style>
+    <title>Delete Modal</title>
+</head>
+<body>
+    <div class="open-delete">
+    <button id="open-modal-btn">Open Delete Modal</button>
+</div>
+    
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Confirm Deletion</h2>
+            <p>Are you sure you want to delete this item?</p>
+            <button class="delete-btn">Delete</button>
+        </div>
+    </div>
+
+    <script>const openModalButton = document.getElementById('open-modal-btn');
+const closeModalButton = document.getElementById('close-modal');
+const deleteButton = document.querySelector('.delete-btn');
+const deleteModal = document.getElementById('delete-modal');
+
+openModalButton.addEventListener('click', () => {
+    deleteModal.style.display = 'block';
+});
+
+closeModalButton.addEventListener('click', () => {
+    deleteModal.style.display = 'none';
+});
+
+
+</script>
+</body>
+</html>
